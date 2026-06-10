@@ -1,0 +1,49 @@
+{
+    "name": "xakki/laravel-file-uploader",
+    "description": "Chunked file uploader package for Laravel 10-12 (Upload Protocol v1).",
+    "type": "library",
+    "license": "Apache-2.0",
+    "require": {
+        "php": "^8.3|^8.4|^8.5",
+        "xakki/file-uploader": "^1.0",
+        "illuminate/support": "^10|^11|^12",
+        "illuminate/filesystem": "^10|^11|^12",
+        "illuminate/http": "^10|^11|^12",
+        "illuminate/validation": "^10|^11|^12"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xakki\\LaravelFileUploader\\": "src/"
+        },
+        "files": [
+            "src/aliases.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Xakki\\LaravelFileUploader\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Xakki\\LaravelFileUploader\\Providers\\FileUploaderServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require-dev": {
+        "orchestra/testbench": "*",
+        "phpunit/phpunit": "*",
+        "phpstan/phpstan": "*",
+        "larastan/larastan": "*",
+        "laravel/pint": "*"
+    },
+    "scripts": {
+        "phpunit": "XDEBUG_MODE=off vendor/bin/phpunit",
+        "cs-fix": "XDEBUG_MODE=off vendor/bin/pint",
+        "cs-check": "XDEBUG_MODE=off vendor/bin/pint --test",
+        "phpstan": "XDEBUG_MODE=off vendor/bin/phpstan analyse --memory-limit=512M"
+    }
+}
